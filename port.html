@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MY PORTFOLIO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root {
+    --font-display: 'Instrument Serif', serif;
+    --font-body: 'Inter', sans-serif;
+
+    --background: 201 100% 13%;
+    --foreground: 0 0% 100%;
+    --muted-foreground: 240 4% 66%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 0 0% 10%;
+    --muted: 0 0% 10%;
+    --accent: 0 0% 10%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+  }
+
+  body {
+    margin: 0;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-body);
+  }
+
+  .liquid-glass {
+    background: rgba(255, 255, 255, 0.01);
+    background-blend-mode: luminosity;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: none;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+  .liquid-glass::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1.4px;
+    background: linear-gradient(180deg,
+      rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.15) 20%,
+      rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%,
+      rgba(255,255,255,0.15) 80%, rgba(255,255,255,0.45) 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  @keyframes fade-rise {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-rise { animation: fade-rise 0.8s ease-out both; }
+  .animate-fade-rise-delay { animation: fade-rise 0.8s ease-out 0.2s both; }
+  .animate-fade-rise-delay-2 { animation: fade-rise 0.8s ease-out 0.4s both; }
+
+  .font-display { font-family: 'Instrument Serif', serif; }
+</style>
+</head>
+<body>
+
+<div class="relative min-h-screen w-full overflow-hidden bg-[hsl(var(--background))]">
+
+  <!-- Fullscreen looping background video -->
+  <video
+    autoplay loop muted playsinline
+    class="absolute inset-0 z-0 h-full w-full object-cover"
+    src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4">
+  </video>
+
+  <!-- Navigation -->
+  <nav class="relative z-10 flex flex-row items-center justify-between px-8 py-6 max-w-7xl mx-auto">
+    <span class="font-display text-3xl tracking-tight text-[hsl(var(--foreground))]">
+      Raghul Dravid P R
+    </span>
+
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#home" class="text-sm text-[hsl(var(--foreground))] transition-colors">Home</a>
+    </div>
+
+    
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="relative z-10 flex flex-col items-center text-center px-6 pt-32 pb-40 py-[90px]">
+    <p class="animate-fade-rise font-display text-lg sm:text-xl text-[hsl(var(--muted-foreground))] mb-4">
+      Software Developer &nbsp;|&nbsp; AI Enthusiast &nbsp;|&nbsp; Full Stack Developer &nbsp;|&nbsp; Problem Solver
+    </p>
+
+    <h1 class="animate-fade-rise font-display max-w-5xl text-5xl sm:text-7xl md:text-8xl leading-[0.95] tracking-[-2.46px] font-normal">
+      Hi, I'm <em class="not-italic text-[hsl(var(--muted-foreground))]">Raghul Dravid P R</em>
+    </h1>
+
+    <p class="animate-fade-rise-delay text-[hsl(var(--muted-foreground))] text-base sm:text-lg max-w-2xl mt-8 leading-relaxed">
+      I am an Information Technology student at Easwari Engineering College with a strong passion for software development, Artificial Intelligence, and building innovative digital solutions. My goal is to create impactful software that solves meaningful problems and improves people's lives.
+    </p>
+
+    <div class="animate-fade-rise-delay-2 flex flex-wrap justify-center gap-4 mt-12">
+      <a href="https://github.com/dravidraghul98-arch" target="_blank" rel="noopener noreferrer" class="liquid-glass rounded-full px-10 py-5 text-base text-[hsl(var(--foreground))] cursor-pointer transition-transform duration-300 hover:scale-[1.03]">
+        View Projects
+      </a>
+
+      <a href="https://www.linkedin.com/in/raghuldravid77?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="liquid-glass rounded-full px-10 py-5 text-base text-[hsl(var(--foreground))] cursor-pointer transition-transform duration-300 hover:scale-[1.03]">
+        LinkedIn
+      </a>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
